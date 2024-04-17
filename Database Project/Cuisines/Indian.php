@@ -38,7 +38,7 @@
                 $conn = new mysqli($host, $user, $pass, $dbname);
 
                 $sql = "SELECT name FROM cuisine
-                WHERE cusine_id = 205";
+                WHERE cuisine_id = 205";
                 $result = $conn->query($sql);
                 if ($result && $result->num_rows > 0) {
                     // Output data of each row
@@ -53,7 +53,7 @@
                 }
 
                 $sql = "SELECT origin FROM cuisine
-                WHERE cusine_id = 205";
+                WHERE cuisine_id = 205";
                 $result = $conn->query($sql);
             
                 if ($result && $result->num_rows > 0) {
@@ -67,7 +67,7 @@
                     }
             
                 }
-                $sql = "SELECT description FROM cuisine WHERE cusine_id = 205";
+                $sql = "SELECT description FROM cuisine WHERE cuisine_id = 205";
                 $result = $conn->query($sql);
                 
                 while ($valid = $result->fetch_assoc()) {

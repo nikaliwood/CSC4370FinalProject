@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Soy Sauce Pan Fried Noodles</title>
+    <title>Arab Cuisine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="origin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -81,19 +81,18 @@
                 while ($valid = $result->fetch_assoc()) {
                     $title = isset($valid['title']) ? $valid['title'] : '';
                     //$imagePath = isset($valid['image_path']) ? $valid['image_path'] : '';
-                    $imagePath = str_replace(' ', '_', $name) . "./Recipes/LentilSoup.jpg";
-                    echo "<div class='cusine-container'>";
-                    echo "<img src='$imagePath' alt='$title' style='width: 100%; height: auto;'>";
                     $link = str_replace(' ', '_', $title) . '.php';
                     echo "<a href='$link'>$title</a> <br>";
+                    $imagePath = str_replace(' ', ' ', $title) . ".jpg";
+                    echo "<div class='cusine-container'>";
+                    echo "<img src='./Recipes/$imagePath' alt='$title' style='width: 100%; height: auto;'>";
                     echo "</div>";
                 }
                 
                 
         ?>
-        <br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="footer">
+        <!-- footer --> 
+        <div class="footer"?>
             <p>
                 &copy;
                 <span class="footer-logo">RecipesAroundTheWorld</span>

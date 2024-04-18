@@ -14,7 +14,7 @@
         <meta charset="utf-8">
         <title>RecipesAroundTheWorld</title>
         <meta name="viewport" content="width=device-width, intial-scale = 1.0">
-        <link rel = "stylesheet" href="style.css">
+        <link rel = "stylesheet" href="cuisine.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </label>
     
@@ -25,7 +25,7 @@
             <label for = "check" class="checkbtn">
                 <i class="fa fa-bars"></i>
             </label>
-            <a href="index.html" class="nav-logo">
+            <a href="index.html" class="logo">
                 <img src="./logo.jpg" alt="RecipesAroundTheWorld" width="165"/>
             </a>
             <label class ="logo"></label>
@@ -55,14 +55,20 @@
                     $imageSrc = str_replace(' ', '_', $name) . ".jpg";
                     $link = str_replace(' ', '_', $name) . '.php';
                     echo "<div style='text-align: center;'>";
-                    echo "<a href='$link' style='color:black; font-family: Garamond, Serif; font-size: 25px;'>$name</a><br>";
+                    echo "<a href='$link' style='color: black; font-family: Garamond, Serif; font-size: 25px;'>$name</a><br>";
                     echo "<img src='$imageSrc' alt='$name' style='display: block; margin: 0 auto;'><br><br>";
                     echo "</div>";
                 }
             }
         ?>
 
-
+            <!-- footer -->
+        <div class="footer"?>
+            <p>
+                &copy;
+                <span class="footer-logo">RecipesAroundTheWorld</span>
+            </p>
+        </div>
 
     </body>
 </html>

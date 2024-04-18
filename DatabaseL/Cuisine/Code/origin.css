@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -10,34 +10,36 @@
 body {
     font-family: 'Garamond', Serif;
     background-color:#D8CFC6;
-    ;
 }
 
-nav{
+nav {
     background:#948575;
     height: 100px;
 }
 
-nav ul{
+nav ul {
     float: right;
     margin-right: 20px;
 }
+
 nav ul li {
     display: inline-block;
     line-height: 100px;
     margin:0 5px;
 }
-nav ul li a{
+
+nav ul li a {
     color: black;
     font-size: 15px;
     text-transform: uppercase;
-
 }
-a.active,a:hover{
+
+a.active,a:hover {
     transition: .5s;
     color: #000000;
 }
-.checkbtn{
+
+.checkbtn {
     font-size: 30px;
     float: right;
     line-height: 80px;
@@ -46,21 +48,21 @@ a.active,a:hover{
     cursor: pointer;
 }
 
-#check{
+#check {
     display: none;
 }
 
-@media (max-width:952px){
-    nav ul li a{
+@media (max-width:952px) {
+    nav ul li a {
         font-size: 16px;
     }
 }
 
-@media (max-width:858px){
-    .checkbtn{
+@media (max-width:858px) {
+    .checkbtn {
         display: block;
     }
-    ul{
+    ul {
         position: fixed;
         width:100%;
         height: 100vh;
@@ -75,14 +77,14 @@ a.active,a:hover{
         margin: 50px 0;
         line-height: 30px;
     }
-    nav ul li a{
+    nav ul li a {
         font-size: 20px
     }
-    a:hover,a.active{
+    a:hover,a.active {
         background:"none";
         color: #f2f3f2;
     }
-    #check:checked ~ ul{
+    #check:checked ~ ul {
         left: 0;
     }          
 }
@@ -107,12 +109,23 @@ a.active,a:hover{
 /* Add this to your existing CSS file */
 .recipe-links-container {
     text-align: center; /* Center the text horizontally */
-    font-family: 'Your Arabic Font', Arial, sans-serif; /* Use a suitable Arabic font */
+    font-family: 'Garamond', Serif; /* Set font family to Garamond */
     font-size: 18px; /* Adjust font size as needed */
     line-height: 1.5; /* Adjust line height as needed */
     direction: rtl; /* Set text direction to right-to-left */
     margin: 0 auto; /* Center the container horizontally */
     max-width: 600px; /* Set a maximum width to prevent text from stretching too wide */
+}
+
+/* Style for recipe links */
+.recipe-links-container a {
+    color: black; /* Set the color of recipe links to black */
+}
+
+/* Style for recipe titles */
+.recipe-links-container h3 {
+    font-family: 'Garamond', Serif; /* Set font family to Garamond */
+    font-weight: bold; /* Make the titles bold */
 }
 
 /*footer*/
@@ -124,14 +137,14 @@ a.active,a:hover{
     justify-content: center;
     background: #948575;
     color: #000000;
-  }
-  .footer h5 {
+}
+.footer h5 {
     margin-top: 0;
     margin-bottom: 0;
-  }
-  .footer p {
+}
+.footer p {
     margin-bottom: 0;
-  }
-  .footer {
+}
+.footer {
     color: #F8F7F6;
-  }
+}

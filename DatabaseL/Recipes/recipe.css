@@ -9,10 +9,10 @@
 /*fonts*/
 body {
     font-family: 'Garamond', Serif;
-    background-color: #f2f3f2;
+    background-color: #D8CFC6;
 }
 nav{
-    background:#bfa69d;
+    background:#948575;
     height: 100px;
 }
 
@@ -63,7 +63,7 @@ a.active,a:hover{
         position: fixed;
         width:100%;
         height: 100vh;
-        background: #bfa69d;
+        background: #D8CFC6;
         top: 80px;
         left: -100%;
         text-align: center;
@@ -87,25 +87,26 @@ a.active,a:hover{
 }
 
 .recipe-list {
-    margin: 20px;
+    text-align: center; /* Center the content */
+    margin-top: 20px; /* Add margin to separate from the navigation */
 }
 
-.recipe-list ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.recipe-list li {
-    margin-bottom: 10px;
+.recipes-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow recipes to wrap to the next line */
+    justify-content: center; /* Center the recipes horizontally */
+    max-width: 800px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .recipe-list a {
     text-decoration: none;
     color: #333;
-    background-color: #f4f4f4;
-    padding: 10px 20px;
+    padding: 10px;
+    margin: 5px; /* Add margin to separate recipes */
     border-radius: 5px;
-    display: inline-block;
+    display: inline-block; /* Display recipes in-line */
+    background-color: #D8CFC6;
     transition: background-color 0.3s ease;
 }
 
@@ -120,7 +121,7 @@ a.active,a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #bfa69d;
+    background: #948575;
     color: #000000;
   }
   .footer h5 {

@@ -62,13 +62,12 @@
             }
         ?>
 
-            <!-- footer -->
+        <!-- footer -->
         <div class="footer"?>
             <p>
                 &copy;
                 <span class="footer-logo">RecipesAroundTheWorld</span>
             </p>
         </div>
-
     </body>
 </html>

@@ -20,8 +20,8 @@
 <label class ="logo"></label>
 <ul>
     <li><a class="active" href ='#'>Home</a></li>
-    <li><a href ='cuisines.php'>Cuisines</a></li>
-    <li><a href ='recipe.php'>Recipes</a></li>
+    <li><a href ='cuisine.php'>Cuisines</a></li>
+    <li><a href ='recipes.php'>Recipes</a></li>
     <li><a href ='#'>Review</a></li>
 </ul>
 </nav>

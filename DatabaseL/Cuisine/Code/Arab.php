@@ -39,57 +39,37 @@
         // Create connection
         $conn = new mysqli($host, $user, $pass, $dbname);
 
-        $sql = "SELECT name FROM cuisine WHERE cuisine_id = 203";
+        // Display cuisine title, origin, and description
+        $sql = "SELECT name, origin, description FROM cuisine WHERE cuisine_id = 203";
         $result = $conn->query($sql);
+
         if ($result && $result->num_rows > 0) {
-            // Output data of each row
             while ($row = $result->fetch_assoc()) {
-                // Access the data safely
                 $name = isset($row['name']) ? $row['name'] : '';
-
-                // Use $name and $measurement as needed
-                echo "<div class='title-container'><h2>$name</h2></div><br>";
-            }
-        }
-
-        $sql = "SELECT origin FROM cuisine WHERE cuisine_id = 203";
-        $result = $conn->query($sql);
-
-        if ($result && $result->num_rows > 0) {
-            
-            // Output data of each row
-            while ($row = $result->fetch_assoc()) {
-                // Access the data safely
                 $origin = isset($row['origin']) ? $row['origin'] : '';
+                $description = isset($row['description']) ? $row['description'] : '';
 
-                // Use $name and $measurement as needed
+                echo "<div class='title-container'><h2>$name</h2></div><br>";
                 echo "<div class='origin-container'>Origin : $origin</div><br>";
+                echo "<div class='description-container'>$description</div><br>";
             }
         }
-        $sql = "SELECT description FROM cuisine WHERE cuisine_id = 203";
+
+        // Display recipe titles and images
+        $sql = "SELECT r.title FROM recipes r
+                JOIN cuisine c ON r.cuisine_id = c.cuisine_id
+                WHERE c.cuisine_id = 203";
         $result = $conn->query($sql);
 
         while ($valid = $result->fetch_assoc()) {
-            $description = isset($valid['description']) ? $valid['description'] : '';
-            echo "<div class='description-container'>$description</div><br>";
+            $title = isset($valid['title']) ? $valid['title'] : '';
+            $link = str_replace(' ', '_', $title) . '.php';
+            echo "<h3><a href='$link'>$title</a></h3><br>";
+            $imagePath = str_replace(' ', ' ', $title) . ".jpg";
+            echo "<div class='cusine-container'>";
+            echo "<img src='./Recipes/$imagePath' alt='$title' style='width: 100%; height: auto;'>";
+            echo "</div>";
         }
-
-        $sql = "SELECT r.title from recipes r
-                Join cuisine c on r.cuisine_id = c.cuisine_id
-                Where c.cuisine_id = 203";
-                $result = $conn->query($sql);
-                while ($valid = $result->fetch_assoc()) {
-                    $title = isset($valid['title']) ? $valid['title'] : '';
-                    //$imagePath = isset($valid['image_path']) ? $valid['image_path'] : '';
-                    $link = str_replace(' ', '_', $title) . '.php';
-                    echo "<a href='$link'>$title</a> <br>";
-                    $imagePath = str_replace(' ', ' ', $title) . ".jpg";
-                    echo "<div class='cusine-container'>";
-                    echo "<img src='./Recipes/$imagePath' alt='$title' style='width: 100%; height: auto;'>";
-                    echo "</div>";
-                }
-                
-                
         ?>
         <!-- footer --> 
         <div class="footer"?>

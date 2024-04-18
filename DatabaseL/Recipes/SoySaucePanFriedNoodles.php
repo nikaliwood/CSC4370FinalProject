@@ -1,9 +1,9 @@
 <html lang="en" dir="ltr">
 <head>  
 <meta charset="utf-8">
-<title>RecipesAroundTheWorld</title>
+<title>Soy Sauce Pan Fried Noodles</title>
 <meta name="viewport" content="width=device-width, intial-scale = 1.0">
-<link rel = "stylesheet" href="recipes.css">
+<link rel = "stylesheet" href="layout.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </label>
 
@@ -21,7 +21,7 @@
 <ul>
     <li><a class="active" href ='#'>Home</a></li>
     <li><a href ='cuisines.php'>Cuisines</a></li>
-    <li><a href ='recipes.php'>Recipes</a></li>
+    <li><a href ='recipe.php'>Recipes</a></li>
     <li><a href ='#'>Review</a></li>
 </ul>
 </nav>
@@ -45,8 +45,9 @@
             $title = isset($row['title']) ? $row['title'] : '';
             
             // Use $name and $measurement as needed
-            echo "<h1><center>$title<center></h1><br><br>";
+            echo "<br><h1><center>$title<center></h1><br><br>";
         }
+
 
     }
     $sql = "SELECT description FROM recipes WHERE recipe_id = 1";
@@ -55,7 +56,7 @@
             // Output data
             $row = $result->fetch_assoc();
             $description = isset($row['description']) ? $row['description'] : '';
-            echo $description;
+            echo "<br><center>$description<center><br>";
         }
         echo "<h4>Ingredients</h4>";
 
@@ -75,7 +76,8 @@
         }
 
     }
-    echo "<h4>Instructions</h4>";
+    echo "<br><h4>Instructions<br></h4>";
+    echo "<br><br>";
 
     $sql = "SELECT instructions FROM recipes
       WHERE recipe_id = 1";
@@ -88,6 +90,12 @@
     
       $conn->close();
   ?>
-
+    <!-- footer -->
+    <div class="footer"?>
+            <p>
+                &copy;
+                <span class="footer-logo">RecipesAroundTheWorld</span>
+            </p>
+    </div>
 </body>
 </html>

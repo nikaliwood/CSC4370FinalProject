@@ -11,7 +11,7 @@ $conn = new mysqli($host, $user, $pass, $dbname);
 $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-$recipe_id = 15; // Use the correct recipe ID
+$recipe_id = 13; // Use the correct recipe ID
 
 $is_liked = false;
 
@@ -82,7 +82,7 @@ $conn->close();
         $conn = new mysqli($host, $user, $pass, $dbname);
 
         $sql = "SELECT title FROM recipes
-            WHERE recipe_id = 15";
+            WHERE recipe_id = 13";
             $result = $conn->query($sql);
         if ($result && $result->num_rows > 0) {
             // Output data of each row
@@ -111,7 +111,7 @@ $conn->close();
             function toggleLike() {
     const button = document.getElementById("likeButton");
     const heartIcon = button.querySelector("i");
-    const recipeId = 15; // Correct recipe ID
+    const recipeId = 13; // Correct recipe ID
     const userId = <?php echo $user_id; ?>; // Current user ID
 
     const isRed = heartIcon.style.color === "red"; // Check current color
@@ -166,7 +166,7 @@ $conn->close();
 
 
         <?php
-        $sql = "SELECT description FROM recipes WHERE recipe_id = 15";
+        $sql = "SELECT description FROM recipes WHERE recipe_id = 13";
             $result = $conn->query($sql);
             if ($result && $result->num_rows > 0) {
                 // Output data
@@ -179,7 +179,7 @@ $conn->close();
             echo "<div class='content-container'>";
             echo "<div class='ingredients-container'>";
             echo "<center><h4>Ingredients</h4></center><br>";
-            $sql = "SELECT name, measurement FROM ingredient WHERE recipe_id = 15";
+            $sql = "SELECT name, measurement FROM ingredient WHERE recipe_id = 13";
             $result = $conn->query($sql);
 
             if ($result && $result->num_rows > 0) {
@@ -194,7 +194,7 @@ $conn->close();
             // Instructions
             echo "<div class='instructions-container'>";
             echo "<h4>Instructions</h4><br>";
-            $sql = "SELECT instructions FROM recipes WHERE recipe_id = 15";
+            $sql = "SELECT instructions FROM recipes WHERE recipe_id = 13";
             $result = $conn->query($sql);
 
             if ($result && $result->num_rows > 0) {

@@ -13,7 +13,7 @@ $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
 
 <head>
     <meta charset="utf-8">
-    <title>Indian Cuisine</title>
+    <title>Arab Cuisine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="origin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,7 +39,6 @@ $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
                 <li><a href ="account.php">ACCOUNT</a></li>
                 <li><a href="logout.php">LOGOUT</a></li>
                 <li> HELLO, <?php echo htmlspecialchars(strtoupper($user_name));?></li>
-                
             <?php else: ?>
                 <li><a href="login.php">LOGIN</a></li>
             <?php endif; ?>

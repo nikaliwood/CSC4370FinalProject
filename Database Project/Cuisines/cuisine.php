@@ -1,4 +1,11 @@
 <?php
+// Start the session
+session_start();
+
+// Check if the user is logged in
+$is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+$user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
+
   $host = "localhost";
   $user = "root";
   $pass = "";
@@ -6,6 +13,7 @@
 
   // Create connection
   $conn = new mysqli($host, $user, $pass, $dbname);
+  
 ?>
 
 <html>
@@ -30,13 +38,22 @@
             </a>
             <label class ="logo"></label>
             <ul>
-                <li><a class="active" href ='index.html'>Home</a></li>
-                <li><a href ='cuisines.php'>Cuisines</a></li>
+                <li><a href ='index.php'>Home</a></li>
+                <li><a class = "active" href ='cuisine.php'>Cuisines</a></li>
                 <li><a href ='recipes.php'>Recipes</a></li>
-                <li><a href ='#'>Review</a></li>
+                <li><a href ='review.php'>Review</a></li>
+                <?php if ($is_logged_in): ?>
+                <!-- Display the personalized greeting -->
+                <li><a href ="account.php">ACCOUNT</a></li>
+                <li><a href="logout.php">LOGOUT</a></li>
+                <li> HELLO, <?php echo htmlspecialchars(strtoupper($user_name));?></li>
+                
+            <?php else: ?>
+                <li><a href="login.php">LOGIN</a></li>
+            <?php endif; ?>
             </ul>
         </nav>
-        <br><h1><center>Cuisines</center></h1><br><br>
+        <br><br><br><br>
 
         <?php 
             $host = "localhost";
@@ -56,7 +73,7 @@
                     $imageSrc = str_replace(' ', '_', $name) . ".jpg";
                     $link = str_replace(' ', '_', $name) . '.php';
                     echo "<div style='text-align: center;'>";
-                    echo "<a href='$link' style='color: black; font-family: Garamond, Serif; font-size: 20px;'>$name</a><br>";
+                    echo "<a href='$link' style='color: black; font-family: Garamond, Serif; font-size: 25px;'>$name</a><br>";
                     echo "<img src='$imageSrc' alt='$name' style='display: block; margin: 0 auto;'><br><br>";
                     echo "</div>";
                 }

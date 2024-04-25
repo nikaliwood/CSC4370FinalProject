@@ -58,7 +58,6 @@ $conn->close();
                 <li><a href ='index.php'>Home</a></li>
                 <li><a href ='cuisine.php'>Cuisines</a></li>
                 <li><a href ='recipes.php'>Recipes</a></li>
-                <li><a href ='review.php'>Review</a></li>
                 <?php if ($is_logged_in): ?>
                 <!-- Display the personalized greeting -->
                 <li><a href ="account.php">ACCOUNT</a></li>
@@ -179,7 +178,7 @@ $conn->close();
             echo "<div class='content-container'>";
             echo "<div class='ingredients-container'>";
             echo "<center><h4>Ingredients</h4></center><br>";
-            $sql = "SELECT name, measurement FROM ingredient WHERE recipe_id = 1";
+            $sql = "SELECT name, measurement FROM ingredient WHERE recipe_id = 2";
             $result = $conn->query($sql);
 
             if ($result && $result->num_rows > 0) {

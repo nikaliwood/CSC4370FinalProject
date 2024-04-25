@@ -34,7 +34,15 @@ $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
             <li><a href='cuisine.php'>Cuisines</a></li>
             <li><a href='recipes.php'>Recipes</a></li>
             <li><a href='review.php'>Review</a></li>
-        </ul>
+            <?php if ($is_logged_in): ?>
+                <!-- Display the personalized greeting -->
+                HELLO, <?php echo htmlspecialchars(strtoupper($user_name));; ?>
+                <li><a href="logout.php">LOGOUT</a></li>
+                <li><a href ="account.php">ACCOUNT</a></li>
+                
+            <?php else: ?>
+                <li><a href="login.php">LOGIN</a></li>
+            <?php endif; ?>
 
         <br>
         <!-- Place this within your <nav> or appropriate section -->

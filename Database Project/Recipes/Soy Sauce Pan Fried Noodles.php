@@ -58,6 +58,7 @@ $conn->close();
                 <li><a href ='index.php'>Home</a></li>
                 <li><a href ='cuisine.php'>Cuisines</a></li>
                 <li><a href ='recipes.php'>Recipes</a></li>
+                
                 <?php if ($is_logged_in): ?>
                 <!-- Display the personalized greeting -->
                 <li><a href ="account.php">ACCOUNT</a></li>

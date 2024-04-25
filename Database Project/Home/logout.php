@@ -10,6 +10,6 @@ unset($_SESSION['name']); // Or any other user-related session variable
 session_destroy();
 
 // Redirect the user to a specific page (like the home page or login page)
-header("Location: home.php"); // Change to your desired redirect location
+header("Location: index.php"); // Change to your desired redirect location
 exit(); // Always exit after a header redirect to avoid further script execution
 ?>

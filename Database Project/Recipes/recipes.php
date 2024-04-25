@@ -60,7 +60,7 @@ $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
                     while ($row = $result->fetch_assoc()) {
                         $title = isset($row['title']) ? $row['title'] : '';
                         // Assuming each PHP file is named based on the title (e.g., Title of Recipe.php)
-                        $link = str_replace(' ', '_', $title) . '.php';
+                        $link = str_replace(' ', ' ', $title) . '.php';
                         echo "<a href='$link'>$title</a> <br>";
                     }
                 }

@@ -11,7 +11,7 @@ $conn = new mysqli($host, $user, $pass, $dbname);
 $is_logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
 $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
-$recipe_id = 2; // Use the correct recipe ID
+$recipe_id = 9; // Use the correct recipe ID
 
 $is_liked = false;
 

@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta charset="utf-8">
         <title>RecipesAroundTheWorld</title>
         <meta name="viewport" content="width=device-width, intial-scale = 1.0">
-        <link rel = "stylesheet" href="style.css">
+        <link rel = "stylesheet" href="login.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </label>
     
@@ -68,22 +68,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a class="active" href ='#'>Home</a></li>
                 <li><a href ='cuisine.php'>Cuisines</a></li>
                 <li><a href ='recipes.php'>Recipes</a></li>
-                <li><a href ='review.php'>Review</a></li>
+                
                 <li><a href="login.php">Login</a></li>
             </ul>
         </nav>
-
-    <form action="signup.php" method="post"> <!-- Corrected form action -->
-        <h2>Sign Up!</h2>
-        <label for="name">Enter Your Full Name</label><br>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="username">Create a Username</label><br>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Create a Password</label><br>
-        <input type="password" id="password" name="password"><br>
-        <input type="checkbox" onclick="myFunction()">Show Password<br><br>
-        <button type="submit" name="submit" value="submit">Sign Up</button>
-    </form>
+        <center><h1><br>Sign Up!</h1></center><br><br><br>
+        <div class="center-container">
+            <form action="signup.php" method="post" class="form-container"> <!-- Corrected form action -->
+                <label for="name">Enter Your Full Name</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="username">Create a Username</label><br>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Create a Password</label><br>
+                <input type="password" id="password" name="password"><br>
+                <input type="checkbox" onclick="myFunction()"> Show Password<br><br>
+                <button type="submit" name="submit" value="submit">Sign Up</button>
+            </form>
+        </div>
 
     <script>
         function myFunction() {
@@ -95,5 +96,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     </script>
+    <div class="footer"?>
+        <p>
+            &copy;
+            <span class="footer-logo">RecipesAroundTheWorld</span>
+        </p>
+    </div>
 </body>
 </html>

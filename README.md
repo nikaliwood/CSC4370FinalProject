@@ -2,7 +2,7 @@
 
 A recipe database, that has a full web interface using PHP, SQL, HTML, JS, and CSS.  
 
-Devevlopers:
+Developers:
 
 Nikali Wood  
 Leyyenah Sophie  

@@ -133,7 +133,7 @@ if ($is_logged_in) {
                 $recipe_title = htmlspecialchars($row['title']); // Sanitize the output
                 
                 // Create a clickable link based on the recipe title
-                echo " o <a href='{$recipe_title}.php'>$recipe_title</a><br>"; // Link to the corresponding PHP file
+                echo " <a href='{$recipe_title}.php'>$recipe_title</a><br>"; // Link to the corresponding PHP file
             }
         } else {
             echo "<p>No liked recipes yet.</p>"; // If the user hasn't liked any recipes

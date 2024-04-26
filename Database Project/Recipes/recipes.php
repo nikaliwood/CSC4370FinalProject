@@ -26,20 +26,29 @@ $user_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
     
     </head>
     <body>
-        <nav>
+    <nav>
             <input type ="checkbox" id="check">
             <label for = "check" class="checkbtn">
                 <i class="fa fa-bars"></i>
             </label>
-            <a href="index.html" class="logo">
+            <a href="index.php" class="logo">
                 <img src="./logo.jpg" alt="RecipesAroundTheWorld" width="165"/>
             </a>
             <label class ="logo"></label>
             <ul>
                 <li><a href ='index.php'>Home</a></li>
                 <li><a href ='cuisine.php'>Cuisines</a></li>
-                <li><a class ="active" href ='recipes.php'>Recipes</a></li>
-                <li><a href ='review.php'>Review</a></li>
+                <li><a class="active" href ='recipes.php'>Recipes</a></li>
+                
+                <?php if ($is_logged_in): ?>
+                <!-- Display the personalized greeting -->
+                <li><a href ="account.php">ACCOUNT</a></li>
+                <li><a href="logout.php">LOGOUT</a></li>
+                <li> HELLO, <?php echo htmlspecialchars(strtoupper($user_name));?></li>
+                
+            <?php else: ?>
+                <li><a href="login.php">LOGIN</a></li>
+            <?php endif; ?>
             </ul>
         </nav>
 

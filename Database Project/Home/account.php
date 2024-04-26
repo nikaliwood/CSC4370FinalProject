@@ -26,7 +26,7 @@ if ($conn->connect_error) {
     <meta charset="UTF-8">
     <title>RecipesAroundTheWorld</title>
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-    <link rel="stylesheet" href="recipes.css">
+    <link rel="stylesheet" href="account.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -43,7 +43,7 @@ if ($conn->connect_error) {
             <li><a href="review.php">Review</a></li>
             <?php if ($is_logged_in): ?>
             <!-- Display the personalized greeting -->
-            <li><a href="account.php">Account</a></li>
+            <li><a class = "active" href="account.php">Account</a></li>
             <li><a href="logout.php">Logout</a></li>
             <li>HELLO, <?php echo htmlspecialchars(strtoupper($user_name)); ?></li>
             <?php else: ?>
@@ -51,7 +51,8 @@ if ($conn->connect_error) {
             <?php endif; ?>
         </ul>
     </nav>
-    <h2>Account Details</h2><br><br><br>
+    <br><br><center><h1>Account Details</h1></center>
+    <br><br><br>
 <?php
     // Check if form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
@@ -71,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['user_id'])) {
     $stmt->close(); // Close the statement
 }
 
+echo "</center><div class = 'words'>";
 // Fetch user's current cuisine preference
 if ($is_logged_in) {
     $stmt = $conn->prepare("SELECT cuisine_type FROM user WHERE user_id = ?");
@@ -83,7 +85,7 @@ if ($is_logged_in) {
         $cuisine_type = $user_data['cuisine_type'];
         
         if (is_null($cuisine_type)) {
-            echo "<b>Choose a favorite cuisine to get recommendations!</b>";
+            echo "<br><b>Choose a favorite cuisine to get recommendations!</b></br>";
         } else {
             echo "Here are some recommended recipes based on your favorite cuisine: <a href = " . htmlspecialchars($cuisine_type) .".php> Click here!</a>";
             // Add code to display recommendations based on cuisine_type
@@ -92,7 +94,7 @@ if ($is_logged_in) {
 }
 
 ?>
-
+ 
 
     <p>Name: <?php echo htmlspecialchars($user_name); ?></p>
     <p>Account Number: <?php echo htmlspecialchars($user_id); ?></p>
@@ -109,11 +111,8 @@ if ($is_logged_in) {
         <button type="submit">Save</button> 
     </form>
 
-
     <?php
     
-    
-    $user_id = $_SESSION['user_id']; // Get the logged-in user's ID
 
         // Query to get the recipe names that the user has liked
         $sql = "
@@ -134,7 +133,7 @@ if ($is_logged_in) {
                 $recipe_title = htmlspecialchars($row['title']); // Sanitize the output
                 
                 // Create a clickable link based on the recipe title
-                echo "<a href='{$recipe_title}.php'>$recipe_title</a><br>"; // Link to the corresponding PHP file
+                echo " o <a href='{$recipe_title}.php'>$recipe_title</a><br>"; // Link to the corresponding PHP file
             }
         } else {
             echo "<p>No liked recipes yet.</p>"; // If the user hasn't liked any recipes
@@ -142,8 +141,16 @@ if ($is_logged_in) {
 
         $stmt->close();
         $conn->close();
-
+       
 ?>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div></center>
+<!-- footer -->
+    <div class="footer"?>
+        <p>
+            &copy;
+            <span class="footer-logo">RecipesAroundTheWorld</span>
+        </p>
+    </div>
 </body>
 </html>
